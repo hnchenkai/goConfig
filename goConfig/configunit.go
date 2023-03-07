@@ -2,11 +2,12 @@ package goConfig
 
 import (
 	"fmt"
-	"goConfig/goConfig/store"
 	"log"
 	"reflect"
 	"sort"
 	"sync"
+
+	"github.com/hnchenkai/goConfig/goConfig/store"
 )
 
 // 配置列表类

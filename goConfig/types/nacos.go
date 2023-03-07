@@ -2,11 +2,13 @@ package types
 
 import (
 	"encoding/json"
-	"goConfig/goConfig/namings"
-	"goConfig/goConfig/store"
 	"log"
 	"reflect"
 	"strings"
+
+	"github.com/hnchenkai/goConfig/goConfig/store"
+
+	"github.com/hnchenkai/goConfig/goConfig/namings"
 
 	"github.com/nacos-group/nacos-sdk-go/vo"
 )

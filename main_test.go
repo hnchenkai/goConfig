@@ -2,10 +2,11 @@ package mainT_test
 
 import (
 	"fmt"
-	"goConfig/goConfig"
 	"reflect"
 	"testing"
 	"time"
+
+	"github.com/hnchenkai/goConfig/goConfig"
 )
 
 type httpUnit struct {

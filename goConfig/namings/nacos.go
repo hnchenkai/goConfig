@@ -1,8 +1,9 @@
 package namings
 
 import (
-	"goConfig/goConfig/utils"
 	"strconv"
+
+	"github.com/hnchenkai/goConfig/goConfig/utils"
 
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/clients/config_client"

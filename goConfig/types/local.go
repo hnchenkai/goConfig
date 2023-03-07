@@ -1,9 +1,10 @@
 package types
 
 import (
-	"goConfig/goConfig/store"
 	"reflect"
 	"time"
+
+	"github.com/hnchenkai/goConfig/goConfig/store"
 
 	"github.com/jinzhu/configor"
 )

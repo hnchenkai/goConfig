@@ -1,4 +1,4 @@
-module goConfig
+module github.com/hnchenkai/goConfig
 
 go 1.19
 

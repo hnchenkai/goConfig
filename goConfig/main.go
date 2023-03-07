@@ -1,11 +1,12 @@
 package goConfig
 
 import (
-	"goConfig/goConfig/store"
-	"goConfig/goConfig/types"
 	"os"
 	"reflect"
 	"sync"
+
+	"github.com/hnchenkai/goConfig/goConfig/store"
+	"github.com/hnchenkai/goConfig/goConfig/types"
 )
 
 type ConfigBase struct {
