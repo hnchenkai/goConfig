@@ -65,3 +65,15 @@ func TestStruct(t *testing.T) {
 	// 	time.Sleep(time.Second)
 	// }
 }
+
+func TestSetStatic(t *testing.T) {
+	inst := goConfig.Default(reflect.TypeOf(ConfigUnits{}))
+	// 顺序，越前面优先级越高
+
+	ut := inst.Static().(*ConfigUnits)
+	ut.Checkid = "ssss"
+	ut.Http = httpUnit{
+		Port: 80,
+	}
+
+}

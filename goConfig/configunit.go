@@ -176,7 +176,7 @@ func (p *ConfigUnit) NewConfigBase() store.IFConfigBase {
 	return reflect.New(p.configBaseType).Interface().(store.IFConfigBase)
 }
 
-// 导出一份正确的数据
+// 导出一份正确的数据 对应的是初始化结构体的指针数据 例如：*ConfigBase
 func (p *ConfigUnit) Static() (result interface{}) {
 	if !p.fastUnit.IsValid() {
 		p.freshValidClone()
