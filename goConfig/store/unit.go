@@ -52,5 +52,5 @@ func (c *ConfigBase) GetType() int {
 }
 
 func (c *ConfigBase) Init() {
-
+	// fmt.Println("初始化")
 }

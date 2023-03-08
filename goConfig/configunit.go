@@ -146,6 +146,7 @@ func GetInfo[T any](app *ConfigUnit, key string, args ...interface{}) (result T,
 // 导出一份正确的数据
 func (p *ConfigUnit) freshValidClone() {
 	// 构建一个新的对象
+	// 理论上数据源只有一个的时候是不需要反射复制的，只要拷贝就好了，这里暂时不处理
 	newUt := reflect.New(p.configBaseType)
 	for i := 0; i < p.configBaseType.NumField(); i++ {
 		fd := p.configBaseType.Field(i)
@@ -157,6 +158,10 @@ func (p *ConfigUnit) freshValidClone() {
 		if uu, ok := p.GetInfo(fd.Name); ok {
 			newUt.Elem().FieldByName(fd.Name).Set(uu)
 		}
+	}
+	initMethod := newUt.MethodByName("Init")
+	if initMethod.IsValid() {
+		initMethod.Call([]reflect.Value{})
 	}
 	// 赋值上去
 	p.fastUnit = newUt
