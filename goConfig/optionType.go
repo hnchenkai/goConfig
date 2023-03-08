@@ -1,7 +1,5 @@
 package goConfig
 
-import "github.com/go-redis/redis"
-
 type RedisOption struct {
 	Network string
 	// host:port address.
@@ -92,13 +90,8 @@ func (c *RedisOption) IsValid() bool {
 	return isValidString(c.Addr)
 }
 
-func (c *RedisOption) Value() redis.Options {
-	return redis.Options{
-		Network:  c.Network,
-		Addr:     c.Addr,
-		Password: c.Password,
-		DB:       c.DB,
-	}
+func (c *RedisOption) Value() *RedisOption {
+	return c
 }
 
 type IntValue int
