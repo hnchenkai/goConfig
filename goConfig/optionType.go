@@ -140,3 +140,14 @@ func (c *LogkitValue) IsValid() bool {
 func (c *LogkitValue) Value() *LogkitValue {
 	return c
 }
+
+// 使用字符串 "true" 才表示true
+type StringBoolValue string
+
+func (c *StringBoolValue) IsValid() bool {
+	return len(*c) > 0
+}
+
+func (c *StringBoolValue) Value() bool {
+	return *c == "true"
+}
